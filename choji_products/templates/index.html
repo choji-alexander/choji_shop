@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Choji products</h1>
+  <div class="row">
+    {% for each in choji_products %}
+      <div class="col">
+          <div class="card" style="width: 18rem;">
+              <img src="{{ each.image_url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">{{ each.name }}</h5>
+                  <p class="card-text">${{ each.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
